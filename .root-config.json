@@ -101,7 +101,7 @@
       "currency": "ZAR",
       "enableBillingOnSandbox": false,
       "paymentSubmissionLeadTime": 0,
-      "clientStatementReference": "<set_reference>",
+      "clientStatementReference": "ZERO-DEPOSIT",
       "paymentMethodTypes": {
         "debitOrders": {
           "enabled": false
