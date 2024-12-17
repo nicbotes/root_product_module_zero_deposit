@@ -20,9 +20,9 @@
     "policySchemeType": "individual",
     "dashboardIssuingEnabled": true,
     "activatePoliciesOnEvent": "policy_issued",
-    "canReactivatePolicies": false,
+    "canReactivatePolicies": true,
     "notTakenUpEnabled": false,
-    "welcomeLetterEnabled": true,
+    "welcomeLetterEnabled": false,
     "policyDocuments": [
       {
         "type": "terms",
@@ -37,14 +37,13 @@
         "enabled": false
       }
     ],
-    "canRequote": false,
+    "canRequote": true,
     "gracePeriod": {
       "lapseOn": {
-        "afterFirstMissedPayment": {
-          "period": 15,
-          "periodType": "days"
+        "afterFirstMissedPayment": null,
+        "consecutiveMissedPayments": {
+          "number": 4
         },
-        "consecutiveMissedPayments": null,
         "missedPaymentsOverPolicyTerm": null,
         "missedPaymentsWithinPeriod": null
       },
@@ -54,30 +53,26 @@
     },
     "waitingPeriod": {
       "applyTo": {
-        "theFullPolicy": {
-          "period": 30,
-          "periodType": "days"
-        }
+        "theFullPolicy": null
       }
     },
     "coolingOffPeriod": {
       "applyTo": {
-        "theFullPolicy": {
-          "refundType": "all_premiums",
-          "period": 1,
-          "periodType": "months"
-        }
+        "theFullPolicy": null
       }
     },
     "policyAnniversaryNotification": null,
+    "policyNumberSchema": null,
     "policyholder": {
       "individualsAllowed": true,
       "individualsIdAllowed": true,
-      "individualsPassportAllowed": true,
+      "individualsPassportAllowed": false,
       "individualsCellphoneAllowed": false,
       "individualsCustomIdAllowed": false,
       "individualsEmailAllowed": false,
       "companiesAllowed": false,
+      "customIdName": "false",
+      "idCountry": "false",
       "individualPolicyholderFields": {
         "address": {
           "suburb": {
@@ -109,31 +104,29 @@
       "clientStatementReference": "<set_reference>",
       "paymentMethodTypes": {
         "debitOrders": {
-          "enabled": true,
-          "strategy": null,
-          "naedoPoliciesInArrears": false
+          "enabled": false
         },
         "card": {
-          "enabled": false
+          "enabled": true
         },
         "eft": {
-          "enabled": false
+          "enabled": true
         },
         "external": {
-          "enabled": false,
-          "createPayments": false
+          "enabled": true,
+          "createPayments": true
         },
         "collectionModules": []
       },
       "retryFailedPayments": {
         "enabled": true,
-        "daysBetweenRetries": 5,
-        "numberOfRetries": 1
+        "daysBetweenRetries": 2,
+        "numberOfRetries": 3
       },
       "proRataBilling": {
-        "enabled": true,
+        "enabled": false,
         "proRataBillingOnIssue": false,
-        "minimumAmount": 1000
+        "minimumAmount": 0
       }
     }
   },
